@@ -1,7 +1,6 @@
 var c = document.querySelector('#index-hero');
 var ctx = c.getContext('2d');
 var circles = [];
-var ms = 0;
 ctx.fillStyle = "black";
 var initialColor = [0,0,0];
 var finalColor = [255,255,255];
@@ -11,6 +10,7 @@ var baseSpeed = 1;
 var radius = 10;
 var circleDensity = 100/(1920*937); // Circles per unit of base area
 var numCircles = 100;
+var drawInterval;
 
 function c2h(c) {
     var h = c.toString(16);
@@ -122,9 +122,17 @@ function calculateCircles() {
     return Math.floor((c.width*c.height)*circleDensity);
 }
 
+function setCircles() {
+    clearInterval(drawInterval);
+    setCanvasDimensions();
+    numCircles = calculateCircles();
+    ctx.clearRect(0,0,c.width,c.height);
+    circles = [];
+    generateCircles(numCircles);
+    drawInterval = setInterval(drawCirclesProximity, 20);   
+}
+window.addEventListener('resize', function(){
+    setCircles();
+})
 
-setCanvasDimensions();
-numCircles = calculateCircles();
-generateCircles(numCircles);
-setInterval(function(){ms+=1;}, 1);
-setInterval(drawCirclesProximity, 20);
+setCircles();
