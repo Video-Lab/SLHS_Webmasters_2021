@@ -3,9 +3,14 @@ var ctx = c.getContext('2d');
 var circles = [];
 var ms = 0;
 ctx.fillStyle = "black";
-var initialColor = RGBToHex([0,0,0]);
-var finalColor = RGBToHex([255,255,255]);
+var initialColor = [0,0,0];
+var finalColor = [255,255,255];
 var pos = [-1, -1];
+var proximityThreshold = 200;
+var baseSpeed = 1;
+var radius = 10;
+var circleDensity = 100/(1920*937); // Circles per unit of base area
+var numCircles = 100;
 
 function c2h(c) {
     var h = c.toString(16);
@@ -38,9 +43,9 @@ class Circle {
     constructor(x,y,r,ic,fc) {
         this.x = x;
         this.y = y;
-        this.proximityThreshold = 200;
-        this.dx = [-1, 1][Math.floor(Math.random()*2)];
-        this.dy = [-1, 1][Math.floor(Math.random()*2)];
+        this.proximityThreshold = proximityThreshold;
+        this.dx = [-baseSpeed, baseSpeed][Math.floor(Math.random()*2)];
+        this.dy = [-baseSpeed, baseSpeed][Math.floor(Math.random()*2)];
         this.r = r;
         this.initialColor = ic;
         this.finalColor = fc;
@@ -83,7 +88,7 @@ class Circle {
 
 function generateCircles(numCircles) {
        for(var i = 0; i < numCircles; i++) {
-            circles.push(new Circle(Math.random()* c.width, Math.random()*c.height, 10, [0,0,0], [255,255,255]));
+            circles.push(new Circle(Math.random()* c.width, Math.random()*c.height, radius, initialColor, finalColor));
             circles[i].draw(ctx, circles[i].r, circles[i].initialColor);
        }
 }
@@ -113,7 +118,13 @@ function drawCirclesProximity() {
 }
 }
 
+function calculateCircles() {
+    return Math.floor((c.width*c.height)*circleDensity);
+}
+
+
 setCanvasDimensions();
-generateCircles(100);
+numCircles = calculateCircles();
+generateCircles(numCircles);
 setInterval(function(){ms+=1;}, 1);
 setInterval(drawCirclesProximity, 20);
