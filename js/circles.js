@@ -2,8 +2,8 @@ var c = document.querySelector('#circles');
 var ctx = c.getContext('2d');
 var circles = [];
 ctx.fillStyle = "black";
-// var initialColor = [17, 17, 64];
-// var finalColor = [255,255,255];
+var initialOpacity = 0.75;
+var finalOpacity = 1;
 var [initialColor, finalColor] = getColorValues();
 var pos = [-1, -1];
 var proximityThreshold = 200;
@@ -52,6 +52,7 @@ class Circle {
         this.x = x;
         this.y = y;
         this.proximityThreshold = proximityThreshold;
+        this.opacity = initialOpacity;
         this.dx = [-baseSpeed, baseSpeed][Math.floor(Math.random()*2)];
         this.dy = [-baseSpeed, baseSpeed][Math.floor(Math.random()*2)];
         this.r = r;
@@ -64,9 +65,10 @@ class Circle {
         this.y = Math.max(0, Math.min(this.y, c.height));
     }
 
-    draw(ctx, r, color) {
+    draw(ctx, r, color, opacity) {
         ctx.beginPath();
         ctx.arc(this.x,this.y,r,0,Math.PI*2,false);
+        ctx.globalAlpha = opacity;
         ctx.fillStyle = RGBToHex(color);
         ctx.fill();
         ctx.closePath();
@@ -89,7 +91,8 @@ class Circle {
         ctx.beginPath();
         var color = interpolateColor(this.initialColor, this.finalColor, close);
         var size = this.r+close*(4*this.r);
-        this.draw(ctx, size, color);
+        var opacity = initialOpacity+(close*(finalOpacity-initialOpacity));
+        this.draw(ctx, size, color, opacity);
     }
 
 }
@@ -97,7 +100,7 @@ class Circle {
 function generateCircles(numCircles) {
        for(var i = 0; i < numCircles; i++) {
             circles.push(new Circle(Math.random()* c.width, Math.random()*c.height, radius, initialColor, finalColor));
-            circles[i].draw(ctx, circles[i].r, circles[i].initialColor);
+            circles[i].draw(ctx, circles[i].r, circles[i].initialColor, circles[i].opacity);
        }
 }
 
