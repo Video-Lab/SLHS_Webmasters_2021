@@ -53,9 +53,12 @@ class Circle {
         this.y = y;
         this.proximityThreshold = proximityThreshold;
         this.opacity = initialOpacity;
-        this.dx = [-baseSpeed, baseSpeed][Math.floor(Math.random()*2)];
-        this.dy = [-baseSpeed, baseSpeed][Math.floor(Math.random()*2)];
+        this.bdx = [-baseSpeed, baseSpeed][Math.floor(Math.random()*2)]
+        this.dx = this.bdx;
+        this.bdy =[-baseSpeed, baseSpeed][Math.floor(Math.random()*2)]; 
+        this.dy = this.bdy;
         this.r = r;
+        this.size = r;
         this.initialColor = ic;
         this.finalColor = fc;
     }
@@ -78,8 +81,8 @@ class Circle {
         this.x += this.dx;
         this.y += this.dy;
         this.clampDimensions();
-        if(this.y <= 0 || this.y >= c.height) {this.dy = -1*this.dy}
-        if(this.x <= 0 || this.x >= c.width) {this.dx = -1*this.dx}
+        if(this.y-this.size <= 0 || this.y+this.size >= c.height) {this.dy = -1*this.dy}
+        if(this.x-this.size <= 0 || this.x+this.size >= c.width) {this.dx = -1*this.dx}
     }
 
     dist(x2,y2) {
@@ -91,7 +94,10 @@ class Circle {
         ctx.beginPath();
         var color = interpolateColor(this.initialColor, this.finalColor, close);
         var size = this.r+close*(4*this.r);
+        this.size = size;
         var opacity = initialOpacity+(close*(finalOpacity-initialOpacity));
+        // this.dx = (1-close)*this.bdx;
+        // this.dy = (1-close)*this.bdy;
         this.draw(ctx, size, color, opacity);
     }
 
