@@ -6,9 +6,6 @@ body  {
     box-sizing: border-box;
 }
 
-.hero-container {
-   
-}
 .hero {
     background: rgb(7,35,131);
     background: linear-gradient(90deg, rgba(7,35,131,1) 0%, rgba(49,113,207,1) 100%);
@@ -31,7 +28,7 @@ body  {
     color: white;
     position: fixed;
     width: 100%;
-
+    transition: background-color 0.3s ease-out;
 }
 
 .nav-item {
