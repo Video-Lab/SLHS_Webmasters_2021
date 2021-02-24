@@ -29,6 +29,7 @@ body  {
 .slogan {
     text-transform: uppercase;
     padding: 0.5em;
+    font-weight: 800;
 }
 
 .svg {
@@ -46,7 +47,7 @@ body  {
     margin: auto;
 }
 
-.btn-primary{
+a.btn-primary{
     padding: 0.5em;
     font-size: 1.1rem;
     text-transform: uppercase;
@@ -54,10 +55,12 @@ body  {
     border: 2px solid #f29446;
     color: white;
     font-weight: 800;
+    display: block;
+    width: fit-content;
 
 }
 
-.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+a.btn-primary:hover, a.btn-primary:active, a.btn-primary:focus {
     background: #ffb175;
     color: white;
     border: 2px solid #ffb175;
@@ -66,6 +69,7 @@ body  {
 .section-title {
     text-transform: uppercase;
     text-align: center;
+    font-weight: 800;
 }
 
 .container-fluid {
@@ -84,6 +88,53 @@ body  {
     transform-origin: bottom middle;
 }
 
+.section-colored {
+    padding: 4em 1em;
+    margin: 0 auto;
+    background: rgb(26,55,18);
+    background: linear-gradient(90deg, rgba(26,55,18,1) 0%, rgba(52,144,15,1) 100%);
+}
+
+.section-colored-inner {
+    background: white;
+    width: 95%;
+    margin: 2em auto;
+    border-radius: 50px;
+    padding: 2em;
+    /* min-height: 300px; */
+}
+.section-title-colored {
+    color: white;
+}
+
+.carousel-inner {
+    width: 70%;
+    margin: auto;
+    padding: 2em;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  background: rgba(0,0,0,0);
+}
+
+
+li[data-target="#process-carousel"] {
+    background-color: black;
+}
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 4rem;
+  color: black;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 4rem;
+  color: black;
+}
 
 /* HERO */
 .hero {
@@ -155,7 +206,7 @@ body  {
 .navbar-brand {
     font-weight: 600;
     font-size: 1.5rem;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     color: white;
 }
 
@@ -191,18 +242,5 @@ body  {
 
     .svg {
         width: 8rem;
-    }
-}
-
-
-@keyframes divider-width {
-    to {
-        transform: scaleX(1);
-    }
-}
-
-@keyframes svg-animate {
-    to {
-        stroke-dashoffset: 0;
     }
 }
