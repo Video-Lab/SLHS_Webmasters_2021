@@ -58,8 +58,8 @@ body  {
 .divider {
     margin: 0.5em auto 1em;
     display: block;
-    width:30%; 
-    transform: scaleX(1);
+    width:0%; 
+    /* transform: scaleX(0); */
     bottom: 0;
     left: 0;
     height: 3px;
@@ -174,5 +174,18 @@ body  {
 
     .svg {
         width: 7rem;
+    }
+}
+
+
+@keyframes divider-width {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes svg-animate {
+    to {
+        stroke-dashoffset: 0;
     }
 }

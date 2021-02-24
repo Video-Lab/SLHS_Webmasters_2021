@@ -1,5 +1,5 @@
-var threshold = 100;
-var offset = 150;
+var baseAnimationTime = 1000;
+
 function checkNavbarColor() {
     if($(window).scrollTop() > 0 || $(window).outerWidth() <= 992) {
         $(".navbar").css("background", "rgb(17,17,64)");
@@ -10,10 +10,15 @@ function checkNavbarColor() {
     }
 }
 
-function dividerWidthScroll(threshold, offset) {
+function dividerWidthScroll() {
     $(".divider").each(function(){
-        var p = Math.max(0, Math.min(1, 1-($(this).offset().top+offset-($(window).height()+$(window).scrollTop()))/threshold));
-        $(this).css("transform", "scaleX(" + p + ")");
+        if($(window).scrollTop()+$(window).height() >= $(this).offset().top) {
+            $(this).animate({
+                'width': '30%'
+            }, baseAnimationTime);
+        }
+        // var p = getScrollPercentage($(this), threshold, offset, 1)//Math.max(0, Math.min(1, 1-($(this).offset().top+offset-($(window).height()+$(window).scrollTop()))/threshold));
+        // $(this).css("transform", "scaleX(" + p + ")");
         
     });
 
@@ -22,12 +27,18 @@ function dividerWidthScroll(threshold, offset) {
 function getSVGItems($svg) {
     return [...$svg.find("path"), ...$svg.find("circle")]
 }
+
+function getScrollPercentage($elem, threshold, offset, factor) {
+    return Math.max(0, Math.min(1, 1-($elem.offset().top+offset-(($(window).height()+$(window).scrollTop())))/(threshold)));
+}
+
 function setSVGDrawArray() {
     $("svg").each(function(){
         var items = getSVGItems($(this));
         for(var i = 0; i < items.length; i++) {
             var len = items[i].getTotalLength();
             items[i].style['stroke-dasharray'] = len;
+            items[i].style['stroke-dashoffset'] = len;
             if(items[i].style['stroke'] === "") items[i].style['stroke'] = "rgb(49,113,207)";
             if(items[i].style['stroke-width'] === "") items[i].style['stroke-width'] = "5px";
             if(items[i].style['fill'] === "") items[i].style['fill'] = 'rgba(0,0,0,0)';
@@ -35,21 +46,33 @@ function setSVGDrawArray() {
     })   
 }
 
-function drawSVG(threshold, offset) {
+function drawSVG() {
+    // $("svg").each(function(){
+    //     var items = getSVGItems($(this));
+    //     for(var i = 0; i < items.length; i++) {
+    //         var len = items[i].getTotalLength();
+    //         var p = 1-getScrollPercentage($(this), threshold, offset, 2);
+    //         console.log(p);
+    //         items[i].style['stroke-dashoffset'] = len*p;
+    //     }
+    // })
+
     $("svg").each(function(){
+    if($(window).scrollTop()+$(window).height() >= $(this).offset().top) {
         var items = getSVGItems($(this));
         for(var i = 0; i < items.length; i++) {
-            var len = items[i].getTotalLength();
-            var p = Math.max(0, Math.min(1, ($(this).offset().top+offset-($(window).height()+$(window).scrollTop()))/threshold));
-            items[i].style['stroke-dashoffset'] = len*p;
+            $(items[i]).animate({
+                'stroke-dashoffset': 0
+            }, baseAnimationTime)
         }
+    }
     })
 }
 
 setSVGDrawArray();
 $(window).scroll(() => {
     checkNavbarColor();
-    dividerWidthScroll(threshold, offset);
-    drawSVG(threshold, offset);
+    dividerWidthScroll();
+    drawSVG();
 });
 $(window).resize(checkNavbarColor);
