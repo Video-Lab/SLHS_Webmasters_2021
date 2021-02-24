@@ -1,3 +1,5 @@
+/* BASICS */
+
 html, body {
     width: 100%;
     margin: 0;
@@ -15,11 +17,6 @@ p {
     font-family: 'Raleway', sans-serif;
 }
 
-.slogan {
-    text-transform: uppercase;
-    padding: 0.5em;
-}
-
 body  {
     font-family: 'Raleway', sans-serif;
     font-size: 1em;
@@ -28,6 +25,50 @@ body  {
     box-sizing: border-box;
 }
 
+/* BASICS -- CLASSES */
+.slogan {
+    text-transform: uppercase;
+    padding: 0.5em;
+}
+
+.svg {
+    width: 10rem;
+    display: block;
+    margin: auto;
+}
+
+.row {
+    margin: 1em;
+}
+
+.btn {
+    display: block;
+    margin: auto;
+}
+
+.section-title {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container-fluid {
+    padding: 1.5em;
+}
+
+.divider {
+    margin: 0.5em auto 1em;
+    display: block;
+    width:30%; 
+    transform: scaleX(1);
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: rgb(49,113,207);
+    transform-origin: bottom middle;
+}
+
+
+/* HERO */
 .hero {
     background: rgb(7,35,131);
     background: linear-gradient(90deg, rgba(7,35,131,1) 0%, rgba(49,113,207,1) 100%);
@@ -42,6 +83,11 @@ body  {
     margin-bottom: 3em;
 }
 
+.hero-info {
+    position: absolute;
+}
+
+/* NAVBAR */
 
 .navbar {
     font-family:'Montserrat', sans-serif;
@@ -111,24 +157,8 @@ body  {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-.hero-info {
-    position: absolute;
-}
 
-.svg {
-    width: 10rem;
-    display: block;
-    margin: auto;
-}
-
-.row {
-    margin: 1em;
-}
-
-.btn {
-    display: block;
-    margin: auto;
-}
+/* RESPONSIVE */
 @media(max-width: 991px) {
     .navbar {
         background: rgb(17,17,64);

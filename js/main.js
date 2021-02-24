@@ -1,3 +1,5 @@
+var threshold = 100;
+var offset = 150;
 function checkNavbarColor() {
     if($(window).scrollTop() > 0 || $(window).outerWidth() <= 992) {
         $(".navbar").css("background", "rgb(17,17,64)");
@@ -8,6 +10,17 @@ function checkNavbarColor() {
     }
 }
 
-// $(document).ready(checkNavbarColor);
-$(window).scroll(checkNavbarColor);
+function dividerWidthScroll(threshold, offset) {
+    $(".divider").each(function(){
+        var p = Math.max(0, Math.min(1, 1-($(".divider").offset().top+offset-($(window).height()+$(window).scrollTop()))/threshold));
+        $(this).css("transform", "scaleX(" + p + ")");
+        
+    });
+
+}
+
+$(window).scroll(() => {
+    checkNavbarColor();
+    dividerWidthScroll(threshold, offset);
+});
 $(window).resize(checkNavbarColor);
