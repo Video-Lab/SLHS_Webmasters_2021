@@ -1,5 +1,9 @@
 /* BASICS */
-
+* {
+    margin: 0,
+    padding: 0,
+    box-sizing: border-box;
+}
 html, body {
     width: 100%;
     margin: 0;
@@ -33,10 +37,12 @@ body  {
 }
 
 .svg {
-    width: 10rem;
-    display: block;
     margin: auto;
+    display: block;
+    overflow: visible;
 }
+
+svg {overflow: visible;}
 
 .row {
     margin: 2em 0.5em;
@@ -107,10 +113,11 @@ a.btn-primary:hover, a.btn-primary:active, a.btn-primary:focus {
     color: white;
 }
 
+
+/* CAROUSEL */
 .carousel-inner {
-    width: 70%;
     margin: auto;
-    padding: 2em;
+    text-align: center;
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
@@ -136,6 +143,13 @@ li[data-target="#process-carousel"] {
   color: black;
 }
 
+.carousel-title {
+    font-size: 2em;
+    font-weight: 800;
+    text-align: center;
+    padding-bottom: 0.5em;
+    text-transform: none;
+}
 /* HERO */
 .hero {
     background: rgb(7,35,131);
@@ -242,5 +256,6 @@ li[data-target="#process-carousel"] {
 
     .svg {
         width: 8rem;
+        
     }
 }

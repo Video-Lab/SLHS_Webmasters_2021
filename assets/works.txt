@@ -1,0 +1,3 @@
+Bootstrap
+jQuery
+svgrepo.com
