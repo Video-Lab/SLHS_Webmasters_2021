@@ -10,7 +10,13 @@ h2 {
     font-size: min(10vw, 4em);
 }
 
+p {
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+}
+
 .slogan {
+    text-transform: uppercase;
     padding: 0.5em;
 }
 
@@ -33,6 +39,7 @@ body  {
     padding: 1em;
     text-align: center;
     color: white;
+    margin-bottom: 3em;
 }
 
 
@@ -108,9 +115,34 @@ body  {
     position: absolute;
 }
 
+.svg {
+    width: 10rem;
+    display: block;
+    margin: auto;
+}
+
+.row {
+    margin: 1em;
+}
+
+.btn {
+    display: block;
+    margin: auto;
+}
 @media(max-width: 991px) {
     .navbar {
         background: rgb(17,17,64);
         padding: 0.6em;
     }  
+}
+
+@media(max-width: 768px) {
+    div[class*='col'] {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .svg {
+        width: 7rem;
+    }
 }
