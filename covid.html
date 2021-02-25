@@ -247,7 +247,7 @@ margin-bottom: 0;">
     </div>
 </div>
 
-<div class="container-fluid footer" style="margin-top: 0;">
+<div class="container-fluid footer" style="margin-top: 0; background: rgb(6,44,0)">
     <p class="footer-text">TelePharma | Seven Lakes High School TSA | Webmaster Team</p>
 </div>
 
@@ -255,6 +255,18 @@ margin-bottom: 0;">
 <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <script src="./js/main.js"></script>
+<script>
+    function checkNavbarColor() {
+    if($(window).scrollTop() > 0 || $(window).outerWidth() <= 992) {
+        $(".navbar").css("background", "rgb(16,54,0)");
+        $(".navbar").css("padding", "0.6em")
+    } else {
+        $(".navbar").css("background", "rgba(0,0,0,0)");
+        $(".navbar").css("padding", "1em 0.6em")
+    }
+}
+
+</script>
 <script src="./js/circles.js"></script>
 </body>
 </html>
