@@ -170,6 +170,30 @@ li[data-target="#process-carousel"] {
     padding-bottom: 0.5em;
     text-transform: none;
 }
+
+.carousel-subtitle {
+    font-size: 1.5em;
+    font-style:italic;
+}
+
+.carousel-image {
+    margin: 2em auto;
+    display: block;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgb(74, 7, 7);
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,0.5);
+
+}
+
+@media(max-width:768px) {
+    .carousel-image{
+    width: 200px;
+    height: 200px;
+    }
+}
 /* HERO */
 .hero {
     background: rgb(7,35,131);
@@ -195,7 +219,7 @@ li[data-target="#process-carousel"] {
     align-items: center;
     padding: 1em;
     text-align: center;
-    color: white;  
+    color: white;
 }
 
 .hero-info {
