@@ -25,7 +25,7 @@ function dividerWidthScroll() {
 }
 
 function getSVGItems($svg) {
-    return [...$svg.find("path"), ...$svg.find("circle")]
+    return [...$svg.find("path"), ...$svg.find("circle"), ...$svg.find("rect")]
 }
 
 function getScrollPercentage($elem, threshold, offset, factor) {
