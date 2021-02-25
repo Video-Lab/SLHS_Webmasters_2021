@@ -19,6 +19,7 @@ html, body {
     background: rgb(17,17,64);
     padding: 2em !important;
     font-size: 0.5rem;
+    margin-top: 2em;
     text-align: center;
     color: white;
 }
