@@ -32,8 +32,9 @@ function getScrollPercentage($elem, threshold, offset, factor) {
     return Math.max(0, Math.min(1, 1-($elem.offset().top+offset-(($(window).height()+$(window).scrollTop())))/(threshold)));
 }
 
-function setSVGDrawArray() {
-    $("svg").each(function(){
+function setSVGDrawArray($target=null) {
+    if($target === null) $target = $("svg")
+    $target.each(function(){
         var items = getSVGItems($(this));
         for(var i = 0; i < items.length; i++) {
             var len = items[i].getTotalLength();
@@ -56,7 +57,8 @@ function drawSVG() {
     //         items[i].style['stroke-dashoffset'] = len*p;
     //     }
     // })
-
+    
+    
     $("svg").each(function(){
     if($(window).scrollTop()+$(window).height() >= $(this).offset().top) {
         var items = getSVGItems($(this));
@@ -69,10 +71,32 @@ function drawSVG() {
     })
 }
 
+
 setSVGDrawArray();
 $(window).scroll(() => {
     checkNavbarColor();
     dividerWidthScroll();
     drawSVG();
 });
+
+$("#process-carousel").on('slide.bs.carousel', function() {
+
+    
+    var $target = $("#process-carousel").children().children("div")
+    $target.each(function() {
+        setSVGDrawArray($(this).find("svg"))
+        $(this).find("svg").each(function() {
+            var $pathTarget = $(this).find("path")
+            for(var i = 0; i < $pathTarget.length; i++) {
+                $pathTarget.get(i).style['stroke-dashoffset'] = $pathTarget.get(i).getTotalLength();
+                $($pathTarget.get(i)).clearQueue();
+                $($pathTarget.get(i)).animate({
+                    'stroke-dashoffset': 0
+                }, baseAnimationTime*2)
+            }            
+        })
+    })
+
+})
+
 $(window).resize(checkNavbarColor);
