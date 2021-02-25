@@ -151,7 +151,7 @@ function setCircles() {
     drawInterval = setInterval(drawCirclesProximity, 20);   
 }
 
-c.addEventListener('mousemove', function(e){
+document.querySelector(".hero").addEventListener('mousemove', function(e){
     pos = getMousePos(e);
 });
 
