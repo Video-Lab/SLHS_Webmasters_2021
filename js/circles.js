@@ -9,7 +9,7 @@ var pos = [-1, -1];
 var proximityThreshold = 200;
 var baseSpeed = 1;
 var radius = 10;
-var circleDensity = 100/(1920*937); // Circles per unit of base area
+var circleDensity = 130/(1920*937); // Circles per unit of base area
 var numCircles = 100;
 var drawInterval;
 
@@ -54,8 +54,10 @@ class Circle {
         this.proximityThreshold = proximityThreshold;
         this.opacity = initialOpacity;
         this.bdx = [-baseSpeed, baseSpeed][Math.floor(Math.random()*2)]
+        // this.bdx = Math.sign([-baseSpeed, baseSpeed][Math.floor(Math.random()*2)])*Math.max(0.8, Math.random()*baseSpeed);
         this.dx = this.bdx;
         this.bdy =[-baseSpeed, baseSpeed][Math.floor(Math.random()*2)]; 
+        // this.bdy = Math.sign([-baseSpeed, baseSpeed][Math.floor(Math.random()*2)])*Math.max(0.8, Math.random()*baseSpeed);
         this.dy = this.bdy;
         this.r = r;
         this.size = r;
@@ -64,8 +66,8 @@ class Circle {
     }
 
     clampDimensions() {
-        this.x = Math.max(0, Math.min(this.x, c.width));
-        this.y = Math.max(0, Math.min(this.y, c.height));
+        this.x = Math.max(0+this.size, Math.min(this.x, c.width-this.size));
+        this.y = Math.max(0+this.size, Math.min(this.y, c.height-this.size));
     }
 
     draw(ctx, r, color, opacity) {
