@@ -1,2 +1,3 @@
 Carousel adjusting
 SVG clipping
+do footer box shadow

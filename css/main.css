@@ -10,6 +10,24 @@ html, body {
     margin: 0;
 }
 
+.container {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.footer {
+    background: rgb(17,17,64);
+    padding: 2em !important;
+    font-size: 0.5rem;
+    text-align: center;
+    color: white;
+}
+
+.footer-text {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
