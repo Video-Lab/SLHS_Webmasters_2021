@@ -9,3 +9,5 @@ function checkNavbarColor() {
         $(".navbar").css("padding", "1em 0.6em")
     }
 }
+
+$(window).resize(checkNavbarColor);
