@@ -10,4 +10,5 @@ function checkNavbarColor() {
     }
 }
 
+checkNavbarColor();
 $(window).resize(checkNavbarColor);
