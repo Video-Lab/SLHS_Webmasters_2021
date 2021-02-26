@@ -86,18 +86,21 @@ $("#process-carousel").on('slide.bs.carousel', function() {
 
     
     var $target = $("#process-carousel").children().children("div")
+    var $active = $("#process-carousel").find("div.active")
     $target.each(function() {
-        setSVGDrawArray($(this).find("svg"))
-        $(this).find("svg").each(function() {
-            var $pathTarget = $(this).find("path")
-            for(var i = 0; i < $pathTarget.length; i++) {
-                $pathTarget.get(i).style['stroke-dashoffset'] = $pathTarget.get(i).getTotalLength();
-                $($pathTarget.get(i)).clearQueue();
-                $($pathTarget.get(i)).animate({
-                    'stroke-dashoffset': 0
-                }, baseAnimationTime*2)
-            }            
-        })
+        if(!$(this).is($active)) {
+            setSVGDrawArray($(this).find("svg"))
+            $(this).find("svg").each(function() {
+                var $pathTarget = $(this).find("path")
+                for(var i = 0; i < $pathTarget.length; i++) {
+                    $pathTarget.get(i).style['stroke-dashoffset'] = $pathTarget.get(i).getTotalLength();
+                    $($pathTarget.get(i)).clearQueue();
+                    $($pathTarget.get(i)).animate({
+                        'stroke-dashoffset': 0
+                    }, baseAnimationTime*2)
+                }            
+            })
+        }
     })
 
 })

@@ -160,6 +160,14 @@ if(document.querySelector(".hero-header")) document.querySelector(".hero-header"
     pos = getMousePos(e);
 });
 
+document.querySelector(".navbar").addEventListener('mousemove', function(e){
+    pos = getMousePos(e);
+});
+
+document.addEventListener("mousemove", function(e){
+    if($(window).scrollTop() <= $(window).height()+proximityThreshold) pos = getMousePos(e)
+})
+
 window.addEventListener('resize', function(){
     setCircles();
 });

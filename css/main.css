@@ -331,3 +331,14 @@ li[data-target="#process-carousel"] {
         
     }
 }
+
+.footer {
+    margin-bottom: 0 !important;
+}
+@media(min-width: 1199px) {
+    .container, .container-fluid {
+        margin-top: 6em;
+        margin-bottom: 6em;
+    }
+
+}
