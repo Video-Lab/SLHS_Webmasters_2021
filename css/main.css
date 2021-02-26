@@ -50,6 +50,10 @@ body  {
 }
 
 /* BASICS -- CLASSES */
+svg {
+    padding: 5px;
+}
+
 .slogan {
     text-transform: uppercase;
     padding: 0.5em;
@@ -203,6 +207,7 @@ li[data-target="#process-carousel"] {
     height: 200px;
     }
 }
+
 /* HERO */
 .hero {
     background: rgb(7,35,131);
@@ -247,7 +252,7 @@ li[data-target="#process-carousel"] {
     padding: 1em 0.6em;
     width: 100%;
     transition: all 0.3s ease-out;
-    box-shadow: 0 2px 5px 1px rgba(0,0,0,0.5);
+    /* box-shadow: 0 2px 5px 1px rgba(0,0,0,0.5); */
 }
 
 .nav-item {
