@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .demo-container {
+            min-height: 100vh;
+            margin-top: 0;
+            opacity: 0;
+        }
+
+        .login {
+            min-height: fit-content;
+            background: rgb(17, 17, 64,1);
+            padding: 2em;
+            padding-right: 4em;
+            padding-left: 4em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            text-transform: uppercase;
+        }
+
+        .footer {
+            margin-top: 0;
+        }
+
+        .login-text {
+            color: white;
+            font-size: 4rem;
+            padding-top: 0.5em;
+            padding-bottom: 1em;
+        }
+
+        .group-container {
+            width: fit-content;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+
+        .red {
+            color: #d63c3c;
+            font-weight: 800;
+        }
+
+        .yellow {
+            color: #e88e2a;
+            font-weight: 800;
+        }
+
+        .green {
+            color: #53bf2c;
+            font-weight: 800;
+        }
+
+        .label {
+            font-weight: 800;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+    </style>
+    <title>TelePharma | Demo</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+        <a class="navbar-brand" href="index.html">Telepharma</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about-us.html">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="demo.html">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-active" href="#">Demo<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="covid.html">Combatting COVID</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="references.html">References</a>
+            </li>
+            </ul>
+
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="tsa.html">TSA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cte.html">CTE</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+<div class="hero-header" style="height: 100vh">
+    <div class="hero-info">
+        <h1 class="slogan">Demo</h2>  
+    </div>
+    <canvas id="circles" class="initial-111140 final-ffffff"></canvas>
+</div>
+
+<div class="container-fluid login-container">
+    <div class="login">
+        <h2 class="login-text">Login</h2>
+        <form>
+            <div class="mb-3">
+              <input type="email" class="form-control" id="email" placeholder="Email address" value="name@example.com">
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" id="password" placeholder="Password" value="passwordgoeshere">
+            </div>
+            <a onclick="login();" class="btn btn-primary" style="margin-top: 2em;">Submit</a>
+          </form>
+    </div>
+</div>
+
+<div class="container-fluid demo-container" style="display: flex; flex-direction: column; align-items: center;">
+    <h1 class="demo-name" style="text-align: center;">Welcome, <strong>Demo</strong>!</h1>
+    <div class="alert alert-warning" style="width: fit-content; margin-top: 1em; height: fit-content;"><p>Your next appointment is in <strong>2</strong> days.</p></div>
+    <div class="alert alert-danger" style="width: fit-content; margin-top: 1em; height: fit-content;"><p>COVID-19 Test Status: <strong class="red">Positive</strong></p><p>You will recieve a quarantine packet from TelePharma soon. Please stay safe and isolated from others.</p></div>
+
+    <div class="group-container">
+    <p class="label">Basic Information</p>
+    <table class="table table-striped" style="text-align: left; max-width: 100vw;">
+        <thead>
+          <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Age</th>
+            <td>30</td>
+          </tr>
+          <tr>
+            <th scope="row">BMI</th>
+            <td class="red">34.1</td>
+          </tr>
+          <tr>
+            <th scope="row">General Health</th>
+            <td class="yellow">Medium</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="group-container">
+    <table class="table table-striped" style="text-align: left; max-width: 100vw;">
+        <p class="label">Scheduled Medication</p>
+        <thead>
+          <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Saline Solution</th>
+            <td class="red">2 hours</td>
+          </tr>
+          <tr>
+            <th scope="row">Electrolyte Mixture</th>
+            <td class="yellow">8 hours</td>
+          </tr>
+          <tr>
+            <th scope="row">SSRP 2x Dose</th>
+            <td class="green">2 days</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="group-container">
+        <table class="table table-striped" style="text-align: left; max-width: 100vw;">
+            <p class="label">Future Appointments</p>
+            <thead>
+              <tr>
+                <th scope="col">Data</th>
+                <th scope="col">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Dr. John Doe</th>
+                <td class="red">1 hour</td>
+              </tr>
+              <tr>
+                <th scope="row">Dr. Jane Doe</th>
+                <td class="yellow">2 days</td>
+              </tr>
+              <tr>
+                <th scope="row">Dr. Johnny Doe</th>
+                <td class="yellow">3 days</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+</div>
+
+
+
+
+
+
+
+<div class="container-fluid footer">
+    <p class="footer-text">TelePharma | Seven Lakes High School TSA | Webmaster Team</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="./js/main.js"></script>
+<script>
+    function login() {
+
+        $(".login-container").css("min-height", "0px");
+        $(".login-container").animate({
+            "height": "0",
+            "opacity": 0
+        }, 1000, function(){$(".login-container").css("display", "hidden")})
+
+        $(".demo-container").animate({
+            "height": "100%",
+            "opacity": 1
+        }, 1000)
+        $(".demo-container").css("min-height", "100vh");
+        $(".demo-container").css("height", "max-content");
+
+    }
+</script>
+<script src="./js/circles.js"></script>
+</body>
+</html>
