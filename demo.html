@@ -77,89 +77,104 @@
     </div>
 </div>
 
-<div class="container-fluid demo-container" style="">
+<div class="container demo-container" style="">
     <h1 class="demo-name" style="text-align: center;">Welcome, <strong>Demo</strong>!</h1>
-    <div class="alert alert-warning" style="width: fit-content; margin-top: 1em; height: fit-content;"><p>Your next appointment is in <strong>1 hour.</strong></p></div>
-    <div class="alert alert-danger" style="width: fit-content; margin-top: 1em; height: fit-content;"><p>COVID-19 Test Status: <strong class="red">Positive</strong></p><p>You will recieve a quarantine packet from TelePharma soon. Please stay safe and isolated from others.</p></div>
-
-    <div class="group-container">
-    <p class="label">Basic Information</p>
-    <table class="table table-striped" style="text-align: left; max-width: 100vw;">
-        <thead>
-          <tr>
-            <th scope="col">Data</th>
-            <th scope="col">Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Age</th>
-            <td>30</td>
-          </tr>
-          <tr>
-            <th scope="row">BMI</th>
-            <td class="red">34.1</td>
-          </tr>
-          <tr>
-            <th scope="row">General Health</th>
-            <td class="yellow">Medium</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="group-container">
-    <table class="table table-striped" style="text-align: left; max-width: 100vw;">
-        <p class="label">Scheduled Medication</p>
-        <thead>
-          <tr>
-            <th scope="col">Data</th>
-            <th scope="col">Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Saline Solution</th>
-            <td class="red">2 hours</td>
-          </tr>
-          <tr>
-            <th scope="row">Electrolyte Mixture</th>
-            <td class="yellow">8 hours</td>
-          </tr>
-          <tr>
-            <th scope="row">SSRP 2x Dose</th>
-            <td class="green">2 days</td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-
-      <div class="group-container">
-        <table class="table table-striped" style="text-align: left; max-width: 100vw;">
-            <p class="label">Future Appointments</p>
-            <thead>
-              <tr>
-                <th scope="col">Data</th>
-                <th scope="col">Value</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Dr. John Doe</th>
-                <td class="red">1 hour</td>
-              </tr>
-              <tr>
-                <th scope="row">Dr. Jane Doe</th>
-                <td class="yellow">2 days</td>
-              </tr>
-              <tr>
-                <th scope="row">Dr. Johnny Doe</th>
-                <td class="yellow">3 days</td>
-              </tr>
-            </tbody>
-          </table>
+    <div class="row flex-column-reverse flex-md-row">
+      <div class="col-md-6 col-sm-12">
+        <div class="group-container">
+          <p class="label">Basic Information</p>
+          <table class="table table-striped" style="text-align: left; max-width: 100vw;">
+              <thead>
+                <tr>
+                  <th scope="col">Data</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Age</th>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <th scope="row">BMI</th>
+                  <td class="red">34.1</td>
+                </tr>
+                <tr>
+                  <th scope="row">General Health</th>
+                  <td class="yellow">Medium</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-</div>
+      
+          <div class="group-container">
+          <table class="table table-striped" style="text-align: left; max-width: 100vw;">
+              <p class="label">Scheduled Medication</p>
+              <thead>
+                <tr>
+                  <th scope="col">Data</th>
+                  <th scope="col">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Saline Solution</th>
+                  <td class="red">2 hours</td>
+                </tr>
+                <tr>
+                  <th scope="row">Electrolyte Mixture</th>
+                  <td class="yellow">8 hours</td>
+                </tr>
+                <tr>
+                  <th scope="row">SSRP 2x Dose</th>
+                  <td class="green">2 days</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+      
+            <div class="group-container">
+              <table class="table table-striped" style="text-align: left; max-width: 100vw;">
+                  <p class="label">Future Appointments</p>
+                  <thead>
+                    <tr>
+                      <th scope="col">Data</th>
+                      <th scope="col">Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Dr. John Doe</th>
+                      <td class="red">1 hour</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Dr. Jane Doe</th>
+                      <td class="yellow">2 days</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Dr. Johnny Doe</th>
+                      <td class="yellow">3 days</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="alert alert-warning" style=" margin-top: 1em; height: fit-content;"><p>Your next appointment is in <strong>1 hour.</strong></p></div>
+        <div class="alert alert-danger" style=" margin-top: 1em; height: fit-content;"><p>COVID-19 Test Status: <strong class="red">Positive</strong></p><p>You will recieve a quarantine packet from TelePharma soon. Please stay safe and isolated from others.</p></div>
+        <div class="notes">
+          <p class="label">Doctor's Notes</p>
+
+          <p class="note"><strong class="green">Exercise:</strong> You are making great progress keeping physically active! As we discussed in our sessions, exercising for at least 5 hours a week will improve your condition. Good job!</p>
+          <p class="note"><strong class="green">Medicine:</strong> Your medicine appears to be working according to the doses provided! We will discuss modifications to your current medication at our next meeting.</p>
+          <p class="note"><strong class="red">COVID-19:</strong> I am very sorry to hear that you have tested positive for COVID-19. TelePharma is doing all they can to help you. In the meantime, you can ask me any questions you have about the virus or its effects on you, whether that be through text, phone, or at our next meeting.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+
+    
 
 
 

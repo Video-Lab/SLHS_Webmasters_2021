@@ -23,7 +23,7 @@ function login() {
         "opacity": 0
     }, 1000, function(){$(".login-container").css("display", "hidden")})
 
-    $(".demo-container").css("display", "flex");
+    $(".demo-container").css("display", "block");
     $(".demo-container").animate({
         "height": "100%",
         "opacity": 1
