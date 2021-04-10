@@ -313,7 +313,7 @@ li[data-target="#process-carousel"] {
 
 
 /* RESPONSIVE */
-@media(max-width: 991px) {
+@media(max-width: 1199px) {
     .navbar {
         background: rgb(17,17,64);
         padding: 0.6em;
@@ -335,6 +335,7 @@ li[data-target="#process-carousel"] {
 .footer {
     margin-bottom: 0 !important;
 }
+
 @media(min-width: 1199px) {
     .container, .container-fluid {
         margin-top: 6em;

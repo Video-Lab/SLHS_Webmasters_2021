@@ -1,7 +1,7 @@
 var baseAnimationTime = 1000;
 
 function checkNavbarColor() {
-    if($(window).scrollTop() > 0 || $(window).outerWidth() <= 992) {
+    if($(window).scrollTop() > 0 || $(window).outerWidth() <= 1200) {
         $(".navbar").css("background", "rgb(17,17,64)");
         $(".navbar").css("box-shadow", "0 2px 5px 1px rgba(0,0,0,0.5)")
         $(".navbar").css("padding", "0.6em")
