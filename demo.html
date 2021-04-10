@@ -67,17 +67,17 @@
         <h2 class="login-text">Login</h2>
         <form>
             <div class="mb-3">
-              <input type="email" class="form-control" id="email" placeholder="Email address" value="name@example.com">
+              <input type="email" class="form-control" id="email" placeholder="Email address" value="">
             </div>
             <div class="mb-3">
-              <input type="password" class="form-control" id="password" placeholder="Password" value="passwordgoeshere">
+              <input type="password" class="form-control" id="password" placeholder="Password" value="">
             </div>
             <a onclick="login();" class="btn btn-primary" style="margin-top: 2em;">Submit</a>
           </form>
     </div>
 </div>
 
-<div class="container-fluid demo-container" style="display: flex; flex-direction: column; align-items: center;">
+<div class="container-fluid demo-container" style="">
     <h1 class="demo-name" style="text-align: center;">Welcome, <strong>Demo</strong>!</h1>
     <div class="alert alert-warning" style="width: fit-content; margin-top: 1em; height: fit-content;"><p>Your next appointment is in <strong>1 hour.</strong></p></div>
     <div class="alert alert-danger" style="width: fit-content; margin-top: 1em; height: fit-content;"><p>COVID-19 Test Status: <strong class="red">Positive</strong></p><p>You will recieve a quarantine packet from TelePharma soon. Please stay safe and isolated from others.</p></div>
@@ -175,24 +175,7 @@
 <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <script src="./js/main.js"></script>
-<script>
-    function login() {
-
-        $(".login-container").css("min-height", "0px");
-        $(".login-container").animate({
-            "height": "0",
-            "opacity": 0
-        }, 1000, function(){$(".login-container").css("display", "hidden")})
-
-        $(".demo-container").animate({
-            "height": "100%",
-            "opacity": 1
-        }, 1000)
-        $(".demo-container").css("min-height", "100vh");
-        $(".demo-container").css("height", "max-content");
-
-    }
-</script>
+<script src="./js/demo.js"></script>
 <script src="./js/circles.js"></script>
 </body>
 </html>
